@@ -4,13 +4,13 @@ import PostCard from "./PostCard";
 
 
 
-const PostsList = () => {
+const PostsList = (props) => {
 
     return (
         <>
 
             {
-                post.map((articolo) => (
+                props.postPropProps.map((articolo) => (
                     <PostCard key={articolo.id} articolo={articolo} />
                 ))
 

@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 
 
 
-const PostCard = () => {
+const PostCard = (props) => {
+
+    // destructuring dell'oggetto props
+    const { articolo } = props;
 
     
 

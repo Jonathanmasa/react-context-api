@@ -4,6 +4,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import axios
 import axios from "axios";
+// importiamo il contesto creato (Global)
+import GlobalContext from './contexts/GlobalContext';
+// bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PostsPage from "./pages/PostsPage";
+
 
 function App() {
 
@@ -21,15 +27,15 @@ function App() {
 
   return (
     <>
-
-       <BrowserRouter>
-          <Routes>
-              <Route element={<DefaultLayout />} >
-                  <Route index element={<PostsPage />} />
-              </Route>
-          </Routes>
-      </BrowserRouter>
-      
+      <GlobalContext.Provider value={{ post }}>
+          <BrowserRouter>
+              <Routes>
+                  <Route>
+                      <Route index element={<PostsPage />} />
+                  </Route>
+              </Routes>
+          </BrowserRouter>
+      </GlobalContext.Provider>
     </>
   )
 }
