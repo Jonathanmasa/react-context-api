@@ -8,7 +8,10 @@ import axios from "axios";
 import GlobalContext from './contexts/GlobalContext';
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import post page
 import PostsPage from "./pages/PostsPage";
+// import detailPage
+import PostsDetailPage from "./pages/PostsDetailPage";
 
 
 function App() {
@@ -32,6 +35,10 @@ function App() {
               <Routes>
                   <Route>
                       <Route index element={<PostsPage />} />
+                      <Route path="/posts">
+                        <Route path=":id" element={<PostsDetailPage />} />
+                      </Route>
+                      
                   </Route>
               </Routes>
           </BrowserRouter>
