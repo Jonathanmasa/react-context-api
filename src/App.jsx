@@ -21,6 +21,14 @@ function App() {
 
   return (
     <>
+
+       <BrowserRouter>
+          <Routes>
+              <Route element={<DefaultLayout />} >
+                  <Route index element={<PostsPage />} />
+              </Route>
+          </Routes>
+      </BrowserRouter>
       
     </>
   )
